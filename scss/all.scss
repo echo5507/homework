@@ -1,0 +1,335 @@
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
+.my-md-7 {
+    @media (min-width:768px) {
+      margin-top: $spacer * 7;
+      margin-bottom: $spacer * 7;
+    }
+  }
+
+  .py-md-6 {
+    @media (min-width:768px) {
+      padding-top: $spacer * 6;
+      padding-bottom: $spacer * 6;
+    }
+  }
+
+
+
+  .writing-md-vertical {
+       @media (min-width: 768px){
+      writing-mode: vertical-rl;
+  }
+}
+
+.vertical-content{
+    @media (min-width: 768px){
+        line-height: 2.5;
+    }
+}
+
+.break-vertical-block {
+@media (min-width: 768px){
+    margin-top: -24px;
+    margin-bottom: -24px;
+}
+}
+
+
+.bg-cover{
+    background-size: cover;
+    background-position: center center;
+}
+
+.margin-top-90px{
+    margin-top: -90px;
+}
+
+.margin-top90px{
+  margin-top: 90px;
+}
+
+
+.text-size20{
+    font-size: 1.25rem;
+}
+
+
+.card-images{
+  position: relative;
+  &-tag-todaySelection{
+    color: white;
+    padding: 10px;
+    background-color: #3F5D45;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    writing-mode: vertical-lr; 
+    letter-spacing: 5px;
+}
+  &-icon{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+ 
+}
+
+.card-check,.icon-check{
+  display: none;
+  &:checked + .icon-uncheck{
+    display: none;
+    & ~.icon-check{
+    display: inline-block;
+    }
+  }
+}
+
+
+
+
+
+.email{
+  position: relative;
+  &-icon{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: $sweetaste;
+    font-size: 20px;
+  }
+  &-input{
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+  }
+  &-input:focus{
+    outline: none ;
+  }
+  &-btncolor{
+    background-color: #FFE180;
+  }
+  &-btncolor:hover{
+    background-color: darken(#FFE180,10%);
+  }
+}
+
+
+.form-control:focus{
+  background-color: white !important;
+}
+
+
+
+.zindex-1 {
+    z-index: -1; 
+  }
+  .zindex-2 {
+    z-index: -2; 
+  }
+
+.header {
+    position: relative; 
+    .rectangle-wrap {
+      font-size: 24px;
+      height: 256px;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+      writing-mode: vertical-lr;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 10px;
+      & + .rectangle-wrap{
+        border-left: 1px solid white;
+      }
+      .rectangle-color {
+        background-color: rgba($sweetaste, .8);
+        transition: background-color .5s;
+      }
+      &.active, &:hover{
+        color: darken($sweetaste,10%);
+        font-weight: bolder;
+        .rectangle-color{
+          background-color: rgba(255, 225, 128, 0.8);
+        }
+        .rectangle-image{
+          filter: blur(0);
+        }
+      }
+    }
+    .rectangle-image {
+      position: absolute;
+      right: -10px;
+      left: -10px;
+      top: -10px;
+      bottom: -10px;
+      filter: blur(4px);
+      transition: filter .5s;
+    }
+  }
+
+.position-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; 
+}
+
+
+
+.section-intro-image{
+    min-height: 250px;
+}
+
+.vertical-content {
+    max-height: 420px;
+}
+
+.marginY-25{
+    margin-top: -25px;
+    margin-bottom: -25px;
+}
+
+.section-bg{
+    background-color: #EAF0ED;
+}
+
+.list-unstyled {
+  color: $sweetaste ;
+  list-style: none;
+  &-a{
+    text-decoration: none;
+    color: $sweetaste ;
+  }&-a:hover{
+    color: darken($sweetaste,10%) !important;
+  }
+  
+}
+
+
+//dessert
+
+
+.list-group-item{
+
+  &.active{
+    border: none;
+    z-index: 2;
+    color: $sweetaste;
+    background-color: $light-sweetaste ;
+  }
+}
+
+.page-link{
+  color: $sweetaste ;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: $sweetaste;
+  border-color: $sweetaste;
+  // &:focus {
+  //   z-index: 3;
+  //   outline: none;
+  //   border: none;
+  //   box-shadow: none;
+  // }
+}
+
+.custom-control-input{}
+
+
+
+
+
+
+//transport
+
+.process-steps{
+  display:flex;
+  justify-content: space-between;
+  position: relative;
+  .step-circle{
+    z-index: 1;
+    height: 20px;
+    width: 20px;
+    border: 1px solid $account-sweetaste;
+    border-radius: 50%;
+    background-color: $sweetaste;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $account-sweetaste;
+  }
+  
+  .step-circle.active{
+    position: relative;
+    border-color: white;
+    &:after {
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      display: block;
+      background-color: white;
+      border-radius: 20px;
+    }
+  }
+}
+
+.step-circle.completed {
+  font-size: 1rem;
+  background-color: white;
+  color: theme-color('primary');
+}
+
+
+
+
+
+
+//invoice
+
+.invoice-item{
+  font-size: 24px;
+  border: 1px solid white;
+  color: white;
+  background-color: $sweetaste;
+
+  &:hover{
+    color: white;
+    background-color: darken($sweetaste,10%);
+  }
+
+
+  &.active{
+    color: $sweetaste !important;
+    background-color: white !important;
+    
+  }
+
+}
